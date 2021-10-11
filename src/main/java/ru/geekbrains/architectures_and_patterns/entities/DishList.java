@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DishList extends DishComponent {
     private DishType name;
-    private List<DishComponent> breakfastList = new LinkedList<>();
+    private List<DishComponent> dishList = new LinkedList<>();
 
     public DishList(DishType name) {
         this.name = name;
@@ -16,16 +16,16 @@ public class DishList extends DishComponent {
     public void print() {
         System.out.println(name + " LIST");
         System.out.println("--------------------------------");
-        breakfastList.forEach(DishComponent::print);
+        dishList.forEach(DishComponent::print);
     }
 
     @Override
     public void addProduct(DishComponent e) {
-        breakfastList.add(e);
+        dishList.add(e);
     }
 
     @Override
     public void removeProduct(int index) {
-        breakfastList.remove(index);
+        dishList.remove(index);
     }
 }

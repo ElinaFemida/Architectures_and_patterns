@@ -9,9 +9,9 @@ public class Product  {
     private int productId;
     private String productName;
     private int productCalories;
-    private float productProteins;
-    private float productFats;
-    private float productCarbs;
+    private long productProteins;
+    private long productFats;
+    private long productCarbs;
 
 
 }

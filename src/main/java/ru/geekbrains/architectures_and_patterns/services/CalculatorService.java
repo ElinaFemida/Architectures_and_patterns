@@ -1,5 +1,9 @@
 package ru.geekbrains.architectures_and_patterns.services;
 
-public class CalculatorService {
-    //iterator
+import ru.geekbrains.architectures_and_patterns.entities.DishList;
+import ru.geekbrains.architectures_and_patterns.entities.DishType;
+
+public class CalculatorService  {
+
+
 }
