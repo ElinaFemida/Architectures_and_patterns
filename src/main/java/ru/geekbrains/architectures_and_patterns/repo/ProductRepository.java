@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 import ru.geekbrains.architectures_and_patterns.entities.Product;
 
-
+//Data Mapper
 import java.util.List;
 
 @Repository
