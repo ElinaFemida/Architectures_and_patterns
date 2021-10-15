@@ -6,10 +6,10 @@ import lombok.Data;
 public class ProductItem extends DishComponent{
     private Product product;
     private int amount;
-    private int sumCalories;
-    private float sumProteins;
-    private float sumFats;
-    private float sumCarbs;
+    private long sumCalories;
+    private long sumProteins;
+    private long sumFats;
+    private long sumCarbs;
 
     public ProductItem(Product product, int amount) {
         this.product = product;

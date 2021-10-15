@@ -1,8 +1,11 @@
 package ru.geekbrains.architectures_and_patterns.entities;
 
+import lombok.Data;
+
 import java.util.LinkedList;
 import java.util.List;
 
+@Data
 public class FoodDiary extends DishComponent{
     private List<DishComponent> diaryList = new LinkedList<>();
 
