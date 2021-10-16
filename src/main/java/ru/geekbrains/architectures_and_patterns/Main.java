@@ -6,8 +6,6 @@ import ru.geekbrains.architectures_and_patterns.services.ProductBuilder;
 import java.util.LinkedList;
 import java.util.List;
 
-//добавление нового продукта в БД клиентом
-// дефолтные значения полей продукта определены в ProductBuilder
 
 public class Main {
     public static void main(String[] args) {
@@ -36,8 +34,6 @@ public class Main {
         FoodDiary diary = new FoodDiary();
         diary.addProduct(breakfast);
         diary.addProduct(lunch);
-
-        //не удается распечатать diary, выдает ошибки UnsupportedOperationException() из класса DishComponent
         diary.print();
 
     }

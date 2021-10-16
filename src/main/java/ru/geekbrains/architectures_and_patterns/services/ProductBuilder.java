@@ -8,9 +8,9 @@ public class ProductBuilder {
     private int productId;
     private String productName = "Default";
     private int productCalories = 0;
-    private float productProteins = 0;
-    private float productFats = 0;
-    private float productCarbs = 0;
+    private long productProteins = 0;
+    private long productFats = 0;
+    private long productCarbs = 0;
 
 
 
@@ -29,17 +29,17 @@ public class ProductBuilder {
         return this;
     }
 
-    public ProductBuilder buildProductProteins(float productProteins) {
+    public ProductBuilder buildProductProteins(long productProteins) {
         this.productProteins = productProteins;
         return this;
     }
 
-    public ProductBuilder buildProductFats(float productFats) {
+    public ProductBuilder buildProductFats(long productFats) {
         this.productFats = productFats;
         return this;
     }
 
-    public ProductBuilder buildProductProductCarbs(float productCarbs) {
+    public ProductBuilder buildProductProductCarbs(long productCarbs) {
         this.productCarbs = productCarbs;
         return this;
     }

@@ -1,9 +1,13 @@
 package ru.geekbrains.architectures_and_patterns.services;
 
-import ru.geekbrains.architectures_and_patterns.entities.DishList;
-import ru.geekbrains.architectures_and_patterns.entities.DishType;
+//iterator
+public class CalculatorService {
 
-public class CalculatorService  {
-
-
+    public void calculateCalories(Calculator calculator) {
+        while (calculator.hasNext()) {
+            long sum = 0L;
+            sum += calculator.next().getSumCalories();
+            System.out.println(sum);
+        }
+    }
 }
