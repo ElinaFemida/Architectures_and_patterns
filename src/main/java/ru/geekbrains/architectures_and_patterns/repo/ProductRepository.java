@@ -7,6 +7,6 @@ import ru.geekbrains.architectures_and_patterns.entities.Product;
 
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer>, JpaSpecificationExecutor<Product> {
+public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
 }

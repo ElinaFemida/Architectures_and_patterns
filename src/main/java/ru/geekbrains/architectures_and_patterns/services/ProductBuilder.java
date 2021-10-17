@@ -5,16 +5,16 @@ import ru.geekbrains.architectures_and_patterns.entities.Product;
 
 @Data
 public class ProductBuilder {
-    private int productId;
+    private long productId;
     private String productName = "Default";
-    private int productCalories = 0;
+    private long productCalories = 0;
     private long productProteins = 0;
     private long productFats = 0;
     private long productCarbs = 0;
 
 
 
-    public ProductBuilder buildProductId(int productId) {
+    public ProductBuilder buildProductId(long productId) {
         this.productId = productId;
         return this;
     }
@@ -24,7 +24,7 @@ public class ProductBuilder {
         return this;
     }
 
-    public ProductBuilder buildProductCalories(int productCalories) {
+    public ProductBuilder buildProductCalories(long productCalories) {
         this.productCalories = productCalories;
         return this;
     }
@@ -39,7 +39,7 @@ public class ProductBuilder {
         return this;
     }
 
-    public ProductBuilder buildProductProductCarbs(long productCarbs) {
+    public ProductBuilder buildProductCarbs(long productCarbs) {
         this.productCarbs = productCarbs;
         return this;
     }

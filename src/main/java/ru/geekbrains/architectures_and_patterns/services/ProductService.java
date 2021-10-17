@@ -12,11 +12,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService {
+public class ProductService  {
     private final ProductRepository productRepository;
 
-    public Optional<Product> findProductById(int id) {
-        return productRepository.findById(id).map(Product::new);
+    public Optional<Product> findProductById(long productId) {
+        return productRepository.findById(productId).map(Product::new);
     }
 
     public Page<Product> findAll(Specification<Product> spec, int page, int pageSize) {
@@ -29,9 +29,10 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         productRepository.deleteById(id);
     }
+
 }
 
 
