@@ -3,6 +3,7 @@ package ru.geekbrains.architectures_and_patterns;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.geekbrains.architectures_and_patterns.entities.*;
+import ru.geekbrains.architectures_and_patterns.repo.ProductMapperImpl;
 import ru.geekbrains.architectures_and_patterns.services.ProductBuilder;
 
 
@@ -16,16 +17,20 @@ public class Main {
         Product apple = new ProductBuilder()
                 .buildProductId(7L)
                 .buildProductName("apple")
-                .buildProductCalories(100)
-                .buildProductProteins(25)
+                .buildProductCalories(100L)
+                .buildProductProteins(25L)
+                .buildProductFats(0L)
+                .buildProductCarbs(0L)
                 .build();
         System.out.println(apple);
 
         Product orange = new ProductBuilder()
                 .buildProductId(6L)
                 .buildProductName("orange")
-                .buildProductCalories(50)
-                .buildProductCarbs(20)
+                .buildProductCalories(50L)
+                .buildProductProteins(0L)
+                .buildProductFats(0L)
+                .buildProductCarbs(0L)
                 .build();
         System.out.println(orange);
 
@@ -33,6 +38,8 @@ public class Main {
                 .buildProductId(5L)
                 .buildProductName("banana")
                 .buildProductCalories(96)
+                .buildProductProteins(0L)
+                .buildProductFats(0L)
                 .buildProductCarbs(22)
                 .build();
         System.out.println(banana);

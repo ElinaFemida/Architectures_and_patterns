@@ -1,20 +1,18 @@
 package ru.geekbrains.architectures_and_patterns.entities;
 
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 
-
+@Builder
 @Entity
 @Table (name = "products")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +33,7 @@ public class Product {
 
     @Column(name = "productCarbs")
     private long productCarbs;
+
 
     public Product(Product product) {
     }

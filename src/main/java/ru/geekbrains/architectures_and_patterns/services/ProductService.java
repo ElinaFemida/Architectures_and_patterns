@@ -1,36 +1,25 @@
 package ru.geekbrains.architectures_and_patterns.services;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import ru.geekbrains.architectures_and_patterns.entities.Product;
 import ru.geekbrains.architectures_and_patterns.repo.ProductRepository;
 
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
-public class ProductService  {
-    private final ProductRepository productRepository;
+public class ProductService {
+    private final ProductRepository repo;
 
-    public Optional<Product> findProductById(long productId) {
-        return productRepository.findById(productId).map(Product::new);
-    }
-
-    public Page<Product> findAll(Specification<Product> spec, int page, int pageSize) {
-        if(page < 0)
-            throw new RuntimeException();
-        return productRepository.findAll(spec, PageRequest.of(page - 1, pageSize)).map(Product::new);
+    public Product findProductById(long productId) {
+        return repo.findById(productId);
     }
 
     public Product saveOrUpdate(Product product) {
-        return productRepository.save(product);
+        return repo.save(product);
     }
 
-    public void deleteById(long id) {
-        productRepository.deleteById(id);
+    public void deleteById(Product product) {
+        repo.delete(product);
     }
 
 }

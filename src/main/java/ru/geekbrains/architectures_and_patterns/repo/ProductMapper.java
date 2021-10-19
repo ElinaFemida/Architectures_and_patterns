@@ -1,4 +1,6 @@
-package ru.geekbrains.architectures_and_patterns.entities;
+package ru.geekbrains.architectures_and_patterns.repo;
+
+import ru.geekbrains.architectures_and_patterns.entities.Product;
 
 import java.util.Optional;
 
