@@ -3,11 +3,13 @@ package ru.geekbrains.architectures_and_patterns.repo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 import ru.geekbrains.architectures_and_patterns.entities.Product;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+@Component
 public class ProductRepository implements Repository<Product>  {
 
     private static final String QUERY_SAVE = "insert into product(id, name, productCalories, productProteins, productFats, productCarbs) values (?, ?, ?, ?, ?, ?)";

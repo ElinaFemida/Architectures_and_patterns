@@ -2,17 +2,34 @@ package ru.geekbrains.architectures_and_patterns;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.webapp.WebAppContext;
 import ru.geekbrains.architectures_and_patterns.entities.*;
 import ru.geekbrains.architectures_and_patterns.repo.ProductMapperImpl;
 import ru.geekbrains.architectures_and_patterns.services.ProductBuilder;
 
+import java.net.URL;
+import java.security.ProtectionDomain;
 
 public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
-        final var mapper = new ProductMapperImpl();
+    public static void main(String[] args) throws Exception {
+    Server server = new Server(9000);
+
+    ProtectionDomain domain = Main.class.getProtectionDomain();
+    URL location = domain.getCodeSource().getLocation();
+
+    WebAppContext webAppContext = new WebAppContext();
+        webAppContext.setContextPath("/app");
+        webAppContext.setWar(location.toExternalForm());
+
+        server.setHandler(webAppContext);
+        server.start();
+        server.join();
+
+        /*final var mapper = new ProductMapperImpl();
 
         Product apple = new ProductBuilder()
                 .buildProductId(7L)
@@ -67,7 +84,7 @@ public class Main {
         diary.addProduct(breakfast);
         diary.addProduct(lunch);
         diary.print();
-
+*/
     }
 }
 
