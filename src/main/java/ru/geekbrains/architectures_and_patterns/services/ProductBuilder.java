@@ -12,7 +12,12 @@ public class ProductBuilder {
     private long productFats = 0;
     private long productCarbs = 0;
 
-
+/*Слепая вера
+Нет проверки на входные данные от пользователя, нет проверки на наличие повторов данных в БД
+Добавить проверку ignoreCase на наличие повторов данных в БД
+Добавить обработку ошибок:если есть хотя бы одно из productProteins,productFats или productCarbs notNull,
+productCalories тоже не может быть null
+*/
 
     public ProductBuilder buildProductId(long productId) {
         this.productId = productId;

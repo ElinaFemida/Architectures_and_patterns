@@ -2,6 +2,7 @@ package ru.geekbrains.architectures_and_patterns.entities;
 
 import lombok.Data;
 
+//Getter'ы и Setter'ы
 @Data
 public class ProductItem extends DishComponent{
     private Product product;
